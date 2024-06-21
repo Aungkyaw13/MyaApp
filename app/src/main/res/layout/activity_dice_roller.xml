@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:id="@+id/main"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    android:orientation="vertical"-->
+<!--    android:background="#fcd2f2"-->
+<!--    tools:context=".DiceRoller">-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/tvShow"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:gravity="center"-->
+<!--        android:text="Dice"-->
+<!--        android:layout_marginTop="200dp"-->
+<!--        android:textColor="#5269fa"-->
+<!--        android:textSize="20sp"-->
+<!--        android:textStyle="bold"-->
+<!--        />-->
+
+<!--    <ImageView-->
+<!--        android:id="@+id/imageView"-->
+<!--        android:layout_width="200dp"-->
+<!--        android:layout_height="200dp"-->
+<!--        android:layout_marginTop="50dp"-->
+<!--        android:layout_gravity="center"-->
+<!--        />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/btRoll"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:backgroundTint="#3b55ff"-->
+<!--        android:text="Roll"-->
+<!--        android:textColor="#fff"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:layout_marginTop="50dp"-->
+<!--        />-->
+
+
+<!--</LinearLayout>-->
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".DiceRoller">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_height="wrap_content">
+        <View
+            android:id="@+id/view"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:background="#128692F7"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+        </View>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="0.1dp"
+            android:background="#787777"
+            app:layout_constraintTop_toBottomOf="@+id/view"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+        <ImageView
+            android:id="@+id/btn_back"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:padding="4dp"
+            android:src="@drawable/baseline_arrow_back_ios_new_24"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="DiceRoller"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@id/container"
+            app:layout_constraintTop_toTopOf="@id/container"
+            android:textStyle="bold"
+            android:gravity="center"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    <TextView
+        android:id="@+id/scoreTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:text="1"
+        app:layout_constraintBottom_toTopOf="@+id/diceImage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/diceImage"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/dice_1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/container" />
+
+
+    <Button
+        android:id="@+id/btnRoll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/purple"
+        android:text="Roll"
+        android:layout_marginBottom="20dp"
+        android:textSize="26sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnChoose"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnChoose"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/purple"
+        android:text="Choose your dice board:"
+        android:textSize="26sp"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/diceImage" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

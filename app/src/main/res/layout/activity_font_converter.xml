@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:id="@+id/main"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    android:padding="8dp"-->
+<!--    android:orientation="vertical"-->
+<!--    android:background="#d7f5e6"-->
+<!--    tools:context=".FontConverter">-->
+
+<!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Font Converter"-->
+<!--        android:textSize="20sp"-->
+<!--        android:textStyle="bold"-->
+<!--        android:textColor="#272928"-->
+<!--        android:layout_gravity="center"-->
+<!--        />-->
+
+<!--    <RadioGroup-->
+<!--        android:id="@+id/rgFonts"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        >-->
+
+<!--        <RadioButton-->
+<!--            android:id="@+id/rbUni2Zg"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="1"-->
+<!--            android:text="Unicode to Zawgyi"-->
+<!--            android:textColor="#272928"-->
+<!--            android:textStyle="bold"-->
+<!--            android:checked="true"-->
+<!--            />-->
+
+<!--        <RadioButton-->
+<!--            android:id="@+id/rbZg2Uni"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="1"-->
+<!--            android:text="Zawgyi to Unicode"-->
+<!--            android:textColor="#272928"-->
+<!--            android:textStyle="bold"-->
+<!--            />-->
+
+<!--    </RadioGroup>-->
+
+<!--    <EditText-->
+<!--        android:id="@+id/etInput"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:layout_weight="1"-->
+<!--        android:gravity="top"-->
+<!--        android:hint="Input Text"-->
+<!--        android:textColor="#272928"-->
+<!--        android:fontFamily="@font/unicode"-->
+<!--        />-->
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        >-->
+
+<!--        <Button-->
+<!--            android:id="@+id/btConvert"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="1"-->
+<!--            android:text="Convert"-->
+<!--            android:textColor="#fff"-->
+<!--            android:textStyle="bold"-->
+<!--            android:backgroundTint="#0c3159"-->
+<!--            />-->
+
+<!--        <Button-->
+<!--            android:id="@+id/btCopy"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="1"-->
+<!--            android:text="Copy"-->
+<!--            android:textColor="#fff"-->
+<!--            android:textStyle="bold"-->
+<!--            android:backgroundTint="#0c3159"-->
+<!--            />-->
+
+<!--        <Button-->
+<!--            android:id="@+id/btClear"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="1"-->
+<!--            android:text="Clear"-->
+<!--            android:textColor="#fff"-->
+<!--            android:textStyle="bold"-->
+<!--            android:backgroundTint="#0c3159"-->
+<!--            />-->
+
+<!--    </LinearLayout>-->
+
+<!--    <EditText-->
+<!--        android:id="@+id/etOutput"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:layout_weight="1"-->
+<!--        android:gravity="top"-->
+<!--        android:editable="false"-->
+<!--        android:hint="Output Text"-->
+<!--        android:textColor="#272928"-->
+<!--        android:textStyle="bold"-->
+<!--        android:fontFamily="@font/zawgyi"-->
+<!--        />-->
+
+<!--</LinearLayout>-->
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".FontConverter">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <View
+            android:id="@+id/view"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:background="#128692F7"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+        </View>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="0.1dp"
+            android:background="#787777"
+            app:layout_constraintTop_toBottomOf="@+id/view"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+        <ImageView
+            android:id="@+id/btn_back"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:padding="4dp"
+            android:src="@drawable/baseline_arrow_back_ios_new_24"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Font Converter"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@id/container"
+            app:layout_constraintTop_toTopOf="@id/container"
+            android:textStyle="bold"
+            android:gravity="center"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+    <RadioGroup
+        android:id="@+id/rgFonts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rbUni2Zg"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:checked="true"
+            android:text="Unicode to Zawgyi" />
+
+        <RadioButton
+            android:id="@+id/rbZg2Uni"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Zawgyi to Unicode" />
+
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/etInput"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="top"
+        android:hint="Input" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:padding="8dp"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btConvert"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="4dp"
+            android:layout_weight="1"
+            android:text="CONVERT" />
+
+
+        <Button
+            android:id="@+id/btClear"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:layout_weight="1"
+            android:text="CLEAR" />
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/etOutput"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:editable="false"
+        android:gravity="top"
+        android:hint="Output" />
+
+</LinearLayout>
